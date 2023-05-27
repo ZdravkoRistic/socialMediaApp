@@ -1,0 +1,21 @@
+### GET ALL USER
+GET http://localhost:4000/api/user
+
+###
+POST http://localhost:4000/api/user/add
+Content-Type: application/json
+
+{
+  "firstName": "Dejan",
+  "lastName": "Zivkovic"
+}
+
+###
+PUT http://localhost:4000/api/user/update/646e514e4611dc2bdddb7b7a
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkYzJiZGRkYjdiN2EiLCJmaXJzdE5hbWUiOiJEZWphbiIsImxhc3ROYW1lIjoiWml2a292aWMiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODUxMjMxMzgsImV4cCI6MTY4NTIwOTUzOH0.IEdfmXplgNNIJUl1_kWYBlw5mDcvTB6UZFZYnT0IoOo
+
+{
+  "firstName": "Dejan",
+  "lastName": "Zivkovic"
+}
