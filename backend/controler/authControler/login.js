@@ -18,7 +18,8 @@ const login = (req, res) => {
                             _id: currentUser._id,
                             firstName: currentUser.firstName,
                             lastName: currentUser.lastName,
-                            role: currentUser.role
+                            role: currentUser.role,
+                            time: new Date().getTime()
                         }, "1d")
                         res.send({user: currentUser, token})
                     } else {
