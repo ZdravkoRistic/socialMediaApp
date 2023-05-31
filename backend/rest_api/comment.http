@@ -1,0 +1,11 @@
+### DELETE COMMENT
+DELETE http://localhost:4000/api/comments/644b7dabf66cb80c5531783d
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkYzJiZGRkYjdiN2EiLCJmaXJzdE5hbWUiOiJEZWphbiIsImxhc3ROYW1lIjoiWml2a292aWMiLCJyb2xlIjoiYWRtaW4iLCJ0aW1lIjoxNjg1NDQ2MTg0OTE5LCJpYXQiOjE2ODU0NDYxODQsImV4cCI6MTY4NTUzMjU4NH0.pywSmHj4fAlsy72s_QKO9BjNtlrU0gCsybONYxYjSX4
+
+
+
+
+
+
+

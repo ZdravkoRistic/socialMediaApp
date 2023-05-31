@@ -6,16 +6,17 @@ POST http://localhost:4000/api/user/add
 Content-Type: application/json
 
 {
-  "firstName": "Dejan",
-  "lastName": "Zivkovic"
+  "firstName": "Zdravko",
+  "lastName": "Ristic"
 }
 
 ###
-PUT http://localhost:4000/api/user/update/646e514e4611dc2bdddb7b7a
-Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkYzJiZGRkYjdiN2EiLCJmaXJzdE5hbWUiOiJEZWphbiIsImxhc3ROYW1lIjoiWml2a292aWMiLCJyb2xlIjoiYWRtaW4iLCJ0aW1lIjoxNjg1MjA3MTQwOTQyLCJpYXQiOjE2ODUyMDcxNDAsImV4cCI6MTY4NTIwNzE3MH0.onsRi3jMJciZJGMkm4_3rvrFlx43QmrnfF7GyKkIebg
 
-{
-  "firstName": "Dejan",
-  "lastName": "Zivkovic"
-}
+PUT http://localhost:4000/api/user/update/6475ed5823cb3ed04c9208e8
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDc1ZWQ1ODIzY2IzZWQwNGM5MjA4ZTgiLCJmaXJzdE5hbWUiOiJaZHJhdmtvIiwibGFzdE5hbWUiOiJSaXN0aWMiLCJyb2xlIjoidXNlciIsInRpbWUiOjE2ODU0NTAxMjk0MDksImlhdCI6MTY4NTQ1MDEyOSwiZXhwIjoxNjg1NTM2NTI5fQ.sZvMUR-6FDBW3gq-FloYkrV4BHSqjNSlSgmBh-Usw8c
+  
+
+  {
+  "firstName": "Zdravko"
+  }
