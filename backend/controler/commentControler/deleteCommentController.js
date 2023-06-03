@@ -1,26 +1,18 @@
 const CommentModel = require("../../models/commentModel");
 
-
-
-
-    
 const deleteComment = async (req, res) => {
 
     let user = req.locals
     const commentId = req.params.id;
    
-     let {role, id} = user
+     let {role, _id} = user
      let query = {_id: commentId}
 
-     
-
      if(role !== "admin" ) {
-      
-          query = {$and:[{_id: commentId},{id:user.id}]}
+          query = {$and:[{_id: commentId},{"user.id":_id}]}
      }
 
     try {
-        
        await CommentModel.deleteOne(query);
         res.send("Comment deleted successfully");
     } catch (error) {

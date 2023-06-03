@@ -12,7 +12,10 @@ module.exports = {
             status: 401,
             send: {msg: "Token is expiries."}
         },
-
+        NOT_HAVE_PERMISSION: {
+            status: 403,
+            send: {msg: "You dont have permission."}
+        },
         NOT_EXIST: {
             status: 415,
             send: {msg: "Data not exist"}

@@ -1,3 +1,19 @@
+### GET ALL COMMENTS
+GET http://localhost:4000/api/comments/all
+
+### GET COMMENT
+GET http://localhost:4000/api/comments/comment/644b7dabf66cb80c55317802
+
+### ADD COMMENT
+POST http://localhost:4000/api/comments/add
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkYzJiZGRkYjdiN2EiLCJmaXJzdE5hbWUiOiJEZWphbiIsImxhc3ROYW1lIjoiWml2a292aWMiLCJyb2xlIjoiYWRtaW4iLCJ0aW1lIjoxNjg1NjM4OTY1NTIxLCJpYXQiOjE2ODU2Mzg5NjUsImV4cCI6MTY4NTcyNTM2NX0.4WMtL8SymBw_mcz_pzbRWhx8_Q1IroI7HIcE5UowK4I
+
+{
+    "body": "Ovo je neki komentar!!!",
+    "postId": "644aedace62d6eb764d777b1"
+}
+
 ### DELETE COMMENT
 DELETE http://localhost:4000/api/comments/644b7dabf66cb80c5531783d
 Content-Type: application/json
@@ -9,3 +25,4 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkY
 
 
 
+>>>>>>> origin/SLIT_004_Delete_Comment

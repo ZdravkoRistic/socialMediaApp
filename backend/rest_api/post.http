@@ -1,2 +1,10 @@
 ### GET ALL POSTS
 GET http://localhost:4000/api/posts/all?page=1&limit=2&public=1
+
+### DELETE A POST
+DELETE http://localhost:4000/api/posts/singlePost/644aedace62d6eb764d77815
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkYzJiZGRkYjdiN2EiLCJmaXJzdE5hbWUiOiJEZWphbiIsImxhc3ROYW1lIjoiWml2a292aWMiLCJyb2xlIjoiYWRtaW4iLCJ0aW1lIjoxNjg1NjQzNjQzMTI3LCJpYXQiOjE2ODU2NDM2NDMsImV4cCI6MTY4NTczMDA0M30.86OgGrW6bIKVhcsLVfAfXiGLY9uW_zOFwcb-6mVHn0g
+
+
+

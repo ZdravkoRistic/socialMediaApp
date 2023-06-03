@@ -15,5 +15,15 @@ module.exports = {
             ]
         }
     },
-        {$unwind: "$user"}]
+        {$unwind: "$user"}],
+
+    /* POST COLLECTION JOIN */
+    joinPostComment: [{
+        $lookup: {
+            from: "posts",
+            localField: "postId",
+            foreignField: "_id",
+            as: "post"
+        }
+    }]
 }

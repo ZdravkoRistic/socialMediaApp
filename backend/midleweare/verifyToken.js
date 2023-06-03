@@ -19,7 +19,12 @@ const verifyToken = (req, res, next) => {
                     //provera da li postoji user sa id iz tokena kod nas u bazi
                     const user = await UserModel.findOne({_id: decode._id})
                     if (user) {
-                        req.locals = decode
+                        req.locals = {
+                            firstName: user.firstName,
+                            lastName: user.lastName,
+                            role: user.role,
+                            _id: decode._id
+                        }
                         next()
                     } else {
                         res.status(httpStatus.TOKEN_EXPIRIES.status).send({msg: "Token is invalid."})

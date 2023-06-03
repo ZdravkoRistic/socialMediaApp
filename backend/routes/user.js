@@ -4,12 +4,14 @@ const router = new Router()
 
 /***** GET *****/
 router.get("/", require("../controler/userControler/getAllUsers"))
+router.get("/:id", require("../controler/userControler/getSingleUser"))
 
 /***** POST *****/
 router.post("/add", require("../controler/userControler/addUser"))
 
 /***** PUT *****/
-router.put("/update/:id", verifyToken, require("../controler/userControler/updateUser"))
+// router.put("/update", verifyToken, require("../controler/userControler/updateUser"))
+router.put("/update/:userId", verifyToken, require("../controler/userControler/updateUser"))
 
 /***** DELETE *****/
 

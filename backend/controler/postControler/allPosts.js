@@ -15,7 +15,7 @@ const allPosts = async (req, res) => {
     } else {
         count = await PostModel.count({})
     }
-    
+
     if (limit !== null && page !== null) {
         pipeline = [...pipeline, {$skip: page},
             {$limit: limit}]
