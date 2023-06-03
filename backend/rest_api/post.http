@@ -1,6 +1,9 @@
 ### GET ALL POSTS
 GET http://localhost:4000/api/posts/all?page=1&limit=2&public=1
 
+### SEARCH POST
+GET http://localhost:4000/api/posts/search?q=anyOne
+
 ### DELETE A POST
 DELETE http://localhost:4000/api/posts/singlePost/644aedace62d6eb764d77815
 Content-Type: application/json
