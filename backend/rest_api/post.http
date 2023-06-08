@@ -1,13 +1,48 @@
 ### GET ALL POSTS
 GET http://localhost:4000/api/posts/all?page=1&limit=2&public=1
 
+### GET POSTS BY USER ID
+GET http://localhost:4000/api/posts/644a553656f68374bf796468
+
 ### SEARCH POST
-GET http://localhost:4000/api/posts/search?q=anyOne
+GET http://localhost:4000/api/posts/search?q=hello
+
+### GET POST BY ID
+GET http://localhost:4000/api/posts/singlePost/644aedace62d6eb764d77811
+
+### GET POST BY TAGS
+GET http://localhost:4000/api/posts/filter?tags=Tag 1
 
 ### DELETE A POST
 DELETE http://localhost:4000/api/posts/singlePost/644aedace62d6eb764d77815
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkYzJiZGRkYjdiN2EiLCJmaXJzdE5hbWUiOiJEZWphbiIsImxhc3ROYW1lIjoiWml2a292aWMiLCJyb2xlIjoiYWRtaW4iLCJ0aW1lIjoxNjg1NjQzNjQzMTI3LCJpYXQiOjE2ODU2NDM2NDMsImV4cCI6MTY4NTczMDA0M30.86OgGrW6bIKVhcsLVfAfXiGLY9uW_zOFwcb-6mVHn0g
+
+
+### ADD POST
+POST http://localhost:4000/api/posts/add
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlNDc5ZTRlMzYyMGFkNGMzNDRhZWEiLCJmaXJzdE5hbWUiOiJEemVuYWQiLCJsYXN0TmFtZSI6IkNhdGljIiwicm9sZSI6InVzZXIiLCJ0aW1lIjoxNjg1OTk3NDgwMDI1LCJpYXQiOjE2ODU5OTc0ODAsImV4cCI6MTY4NjA4Mzg4MH0.5syGopk-gU-4H-tGjFOIeA6yi13N0wx7wfBuEaTtJes
+
+{
+  "body": "post body 3!!!",
+  "title": "Post title 3",
+  "userId": "647e479e4e3620ad4c344aea",
+  "image": "Slika path 3",
+  "isPublic": true,
+  "tags": [
+    {
+      "name": "Tag 1"
+    },
+    {
+      "name": "Tag 2"
+    },
+    {
+      "name": "Tag 3"
+    }
+  ]
+}
+
 
 
 

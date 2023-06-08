@@ -14,5 +14,6 @@ router.post("/add", require("../controler/userControler/addUser"))
 router.put("/update/:userId", verifyToken, require("../controler/userControler/updateUser"))
 
 /***** DELETE *****/
+router.delete("/delete/:userId", verifyToken, require("../controler/userControler/deleteUser"))
 
 module.exports = router

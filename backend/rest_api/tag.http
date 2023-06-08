@@ -1,0 +1,2 @@
+### GET ALL TAGS
+GET http://localhost:4000/api/tags/

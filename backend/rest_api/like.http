@@ -1,0 +1,6 @@
+
+
+### ADD/REMOVE LIKE
+
+POST http://localhost:4000/api/likes/addRemove/644aedace62d6eb764d77787
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFkYzJiZGRkYjdiN2EiLCJmaXJzdE5hbWUiOiJab3JhbmtvdmljIiwibGFzdE5hbWUiOiJTcmRqYW5vdmljY2NjIiwicm9sZSI6ImFkbWluIiwidGltZSI6MTY4NTk4ODA0MDAwMiwiaWF0IjoxNjg1OTg4MDQwLCJleHAiOjE2ODYwNzQ0NDB9.8G-gPs8vP8U_o5IojQivzUAYG-paNm-2O3Z39qeSwQo

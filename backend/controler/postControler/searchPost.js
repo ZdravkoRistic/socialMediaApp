@@ -1,6 +1,6 @@
 const PostModel = require("../../models/postModel");
 const {httpStatus} = require("../../config/constants");
-const {joinPostUser} = require("../../stages/joins");
+const {joinPostUser, joinLikesPost} = require("../../stages/joins");
 const searchPost = (req, res) => {
     const {q} = req.query
     if (q) {
@@ -16,6 +16,7 @@ const searchPost = (req, res) => {
             },
             {$sort: {createdAt: -1}},
             ...joinPostUser,
+            ...joinLikesPost,
             {$project: {userId: 0}}
         ])
             .then((posts) => {

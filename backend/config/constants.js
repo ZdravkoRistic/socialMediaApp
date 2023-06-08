@@ -23,6 +23,11 @@ module.exports = {
         SERVICE_ERROR: {
             status: 500,
             send: {msg: "Service error"}
+        },
+        NOT_FOUND: {
+            status: 404,
+            send: {msg: "Like not found"}
         }
+        
     }
 }

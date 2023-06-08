@@ -1,5 +1,5 @@
 ### GET ALL USER
-GET http://localhost:4000/api/user
+GET http://localhost:4000/api/user/
 
 ###
 POST http://localhost:4000/api/user/add
@@ -23,3 +23,9 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDZlNTE0ZTQ2MTFk
 ### GET SINGE USER
 
 GET http://localhost:4000/api/user/644a553656f68374bf796481
+
+
+### DELETE USER
+DELETE http://localhost:4000/api/user/delete/647e5e98f4dca2c15c847f7e
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlNjI3ZjIyNGMyNTViYjViM2QzZWMiLCJmaXJzdE5hbWUiOiJEemVuYWQiLCJsYXN0TmFtZSI6IkNhdGljIiwicm9sZSI6InVzZXIiLCJ0aW1lIjoxNjg2MDA0MzU0MDg5LCJpYXQiOjE2ODYwMDQzNTQsImV4cCI6MTY4NjA5MDc1NH0.efTwW_UjvAJRwLx2RigC-moNuUNIm3HRJrFKd-5u9sw
