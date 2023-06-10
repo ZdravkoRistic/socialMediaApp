@@ -11,7 +11,9 @@ mongoose.connect(DB_URL)
     .catch((error) => console.log(error))
 
 server.use(express.json())
-
+server.get("/",(req, res)=>{
+    res.send("Welcome to SELECTIT-SOCIAL - its work")
+})
 server.use("/api", require("./routes"))
 
 

@@ -11,7 +11,7 @@ GET http://localhost:4000/api/posts/search?q=hello
 GET http://localhost:4000/api/posts/singlePost/644aedace62d6eb764d77811
 
 ### GET POST BY TAGS
-GET http://localhost:4000/api/posts/filter?tags=Tag 1
+GET http://localhost:4000/api/posts/filter?tags=magical&tags=classic
 
 ### DELETE A POST
 DELETE http://localhost:4000/api/posts/singlePost/644aedace62d6eb764d77815

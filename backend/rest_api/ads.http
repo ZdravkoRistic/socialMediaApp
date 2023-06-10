@@ -1,0 +1,26 @@
+###GET ALL ADS
+GET http://localhost:4000/api/ads
+
+###ADD ADS
+POST http://localhost:4000/api/ads/add
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDdlNjI3ZjIyNGMyNTViYjViM2QzZWMiLCJmaXJzdE5hbWUiOiJEemVuYWQiLCJsYXN0TmFtZSI6IkNhdGljIiwicm9sZSI6InVzZXIiLCJ0aW1lIjoxNjg2MzI5NTUzNDg1LCJpYXQiOjE2ODYzMjk1NTMsImV4cCI6MTY4NjQxNTk1M30.F3rLpBxtado8oJDSHp6MLOg1HLNXA3DiUb70f9LXqP8
+
+{
+  "title": "Sesta reklama",
+  "body": "Tekst reklame",
+  "image": "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=2000",
+  "startDate": "2023-06-09T16:36:06.839Z",
+  "endDate": "2023-06-15T16:36:06.839Z",
+  "price": 500,
+  "duration": "6"
+}
+
+###PAYMENT INIT
+POST http://localhost:4000/api/ads/paymentInit
+Content-Type: application/json
+
+{
+  "price": 500,
+  "currency": "usd"
+}
