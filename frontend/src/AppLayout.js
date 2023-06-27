@@ -27,7 +27,7 @@ function AppLayout() {
 	}, []);
 
 	return (
-		<div className='container mx-auto'>
+		<div className='container mx-auto px-4 sm:px-6 md:px-8 lg:w-[1370px] mt-[20px]'>
 			<Navbar />
 			<Outlet />
 			<ToastContainer />

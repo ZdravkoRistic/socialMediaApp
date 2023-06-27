@@ -5,6 +5,10 @@ import { useDispatch } from 'react-redux';
 import { loggedUser } from '../../store/userSlice';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import HeadingTitle from "../../components/HeadingTitle/HeadingTitle";
+import LinkInfo from "../../components/LinkInfo/LinkInfo";
+
+import loginImage from '../../assets/login-img.png';
 
 function Login() {
 	const dispatch = useDispatch();
@@ -34,36 +38,50 @@ function Login() {
 	});
 
 	return (
-		<div>
-			<form
-				onSubmit={formik.handleSubmit}
-				className='w-[60%] border border-primary flex flex-col mx-auto p-[10px] mt-[50px]'>
-				<label>Email: </label>
-				<input
-					type='email'
-					name='email'
-					placeholder='Insert email'
-					value={formik.values.email}
-					onChange={formik.handleChange}
-					className='border p-[5px] placeholder:text-[14px]'
-				/>
+		<div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-2 lg:mt-[53px] mt-[15px] mb-[23px]">
+			<div>
+				<img src={loginImage} className="object-cover lg:h-[707px] lg:w-[672px]" alt="reg-image"/>
+			</div>
+			<div className="lg:ml-[26px]">
+				<HeadingTitle title="Login"/>
+				<div className="w-full lg:mt-[103px] mt-[23px] border-[0.5px] rounded-lg border-primary mt-[52px]">
+					<form
+						onSubmit={formik.handleSubmit}
+						className=' flex flex-col mx-auto p-[26px] mt-[14px]'>
+						<div className="mt-[10px]">
+							<input
+								type='email'
+								name='email'
+								value={formik.values.email}
+								onChange={formik.handleChange}
+								placeholder='Email'
+								className='border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+							/>
+							<p className="text-red-500 text-xs italic"> </p>
+						</div>
+						<div className="mt-[26px]">
+							<input
+								type='password'
+								name='password'
+								placeholder='Password'
+								value={formik.values.password}
+								onChange={formik.handleChange}
+								className='border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+							/>
+							<p className="text-red-500 text-xs italic"> </p>
+						</div>
 
-				<label>Password: </label>
-				<input
-					type='password'
-					name='password'
-					placeholder='Insert password'
-					value={formik.values.password}
-					onChange={formik.handleChange}
-					className='border p-[5px] placeholder:text-[14px]'
-				/>
-
-				<button
-					type='submit'
-					className='bg-primary text-white p-[5px] mt-[20px] rounded-lg'>
-					Login
-				</button>
-			</form>
+						<div className="mt-[26px]">
+							<button
+								type='submit'
+								className='bg-primary w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+								Sign in
+							</button>
+						</div>
+					</form>
+				</div>
+				<LinkInfo title="Don't have an account?" linkTitle="Click here to Register." link="/register"  />
+			</div>
 		</div>
 	);
 }

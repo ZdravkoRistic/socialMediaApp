@@ -7,17 +7,19 @@ import { ImBin } from 'react-icons/im';
 import PostsService from '../../services/postsService';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
-import { removeSinglePost } from '../../store/postsSlice';
+import {
+	addRemoveLikeToggle,
+	removeSinglePost,
+} from '../../store/postsSlice';
 
 function Card({ post }) {
 	let user = JSON.parse(localStorage.getItem('sm_user'));
 
 	const dispatch = useDispatch();
 
-	// addLike bug on backend
 	const handleAddLike = () => {
 		PostsService.addLike(post._id)
-			.then((res) => console.log(res))
+			.then((res) => dispatch(addRemoveLikeToggle()))
 			.catch((err) => console.log(err));
 	};
 
@@ -69,9 +71,17 @@ function Card({ post }) {
 							className='text-primary text-[20px] cursor-pointer'
 							onClick={handleAddLike}
 						/>
-						<span className='text-primary text-[17px]'>
-							{post.reactions}
-						</span>
+						{/* LIKE, task: finish style for like button */}
+
+						{post.likeInfo?.usersId.includes(user._id) ? (
+							<span className='text-red-400 text-[17px]'>
+								{post.likeInfo?.users.length}
+							</span>
+						) : (
+							<span className='text-primary text-[17px]'>
+								{post.likeInfo?.users.length}
+							</span>
+						)}
 					</div>
 
 					{post.user._id === user._id ? (
