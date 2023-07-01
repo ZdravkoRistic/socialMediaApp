@@ -12,6 +12,9 @@ import {
 	removeSinglePost,
 } from '../../store/postsSlice';
 
+import { MdVisibilityOff, MdVisibility } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+
 function Card({ post }) {
 	let user = JSON.parse(localStorage.getItem('sm_user'));
 
@@ -48,6 +51,9 @@ function Card({ post }) {
 				<p className='absolute top-[22px] left-[10px] text-white'>
 					{moment(post.createdAt).format('dddd,Ah')}
 				</p>
+				<Link to={`/detailPost/${post._id}`}>
+					<MdVisibility className='absolute top-[5px] right-[5px] text-2xl text-white cursor-pointer' />
+				</Link>
 			</div>
 
 			{/* text section */}
@@ -75,11 +81,15 @@ function Card({ post }) {
 
 						{post.likeInfo?.usersId.includes(user._id) ? (
 							<span className='text-red-400 text-[17px]'>
-								{post.likeInfo?.users.length}
+								{post.likeInfo?.users.length > 0
+									? post.likeInfo?.users.length
+									: 0}
 							</span>
 						) : (
 							<span className='text-primary text-[17px]'>
-								{post.likeInfo?.users.length}
+								{post.likeInfo?.users.length > 0
+									? post.likeInfo?.users.length
+									: 0}
 							</span>
 						)}
 					</div>

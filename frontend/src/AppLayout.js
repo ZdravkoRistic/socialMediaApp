@@ -8,7 +8,11 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { restoreUser } from './store/userSlice';
 
-axios.defaults.baseURL = 'http://localhost:4000/api';
+if (process.env.NODE_ENV === 'development') {
+	axios.defaults.baseURL = 'http://localhost:4000/api';
+} else {
+	axios.defaults.baseURL = 'https://selectit-social.vercel.app/api';
+}
 
 axios.interceptors.request.use((config) => {
 	if (localStorage.hasOwnProperty('sm_token')) {

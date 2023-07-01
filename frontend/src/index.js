@@ -15,12 +15,14 @@ import Register from './pages/Register/Register';
 import Login from './pages/Login/Login';
 import Posts from './pages/Posts/Posts';
 import AuthGuarding from './utils/AuthGuarding';
+import Error from './pages/Error/Error';
+import DetailPost from './pages/DetailPost/DetailPost';
 
 const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <AppLayout />,
-		errorElement: <div>ERROR PAGE 404</div>,
+		errorElement: <Error />,
 		children: [
 			{
 				path: '/',
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
 			{
 				path: '/profile',
 				element: <Posts />,
+			},
+			{
+				path: '/detailPost/:id',
+				element: <DetailPost />,
 			},
 		],
 	},

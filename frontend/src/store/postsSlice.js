@@ -8,6 +8,7 @@ const postsSlice = createSlice({
 
 		removePost: false,
 		addRemoveLike: false,
+		createPostNew: false,
 	},
 	reducers: {
 		storeAllPosts: (state, action) => {
@@ -20,6 +21,9 @@ const postsSlice = createSlice({
 		addRemoveLikeToggle: (state, action) => {
 			state.addRemoveLike = !state.addRemoveLike;
 		},
+		createPost: (state, action) => {
+			state.createPostNew = !state.createPostNew;
+		},
 	},
 });
 
@@ -27,5 +31,6 @@ export const {
 	storeAllPosts,
 	removeSinglePost,
 	addRemoveLikeToggle,
+	createPost,
 } = postsSlice.actions;
 export default postsSlice.reducer;
