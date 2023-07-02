@@ -19,40 +19,6 @@ Yup: Biblioteka za definisanje i proveru sheme podataka.
 React Icons: Biblioteka ikona za korištenje unutar React komponenti.
 
 
-├── src/
-│   ├── assets/
-│   │   ├── logo.png
-│   │   └── ...
-│   ├── components/
-│   │   ├── PostList.js
-│   │   ├── PostItem.js
-│   │   └── ...
-│   ├── pages/
-│   │   ├── Home.js
-│   │   ├── Profile.js
-│   │   ├── PostDetail.js
-│   │   └── ...
-│   ├── store/
-│   │   ├── actions/
-│   │   ├── reducers/
-│   │   ├── store.js
-│   │   └── ...
-│   ├── services/
-│   │   ├── api.js
-│   │   └── ...
-│   ├── utils/
-│   │   ├── FileParser.js
-│   │   └── ...
-│   ├── styles/
-│   │   ├── main.scss
-│   │   └── ...
-│   ├── AppLayout.js
-│   └── index.js
-├── public/
-├── .gitignore
-├── package.json
-└── README.md
-
 
 Backend
 
