@@ -1,3 +1,27 @@
+
+Social Media App 
+
+Frontend
+
+Ovaj projekat je frontend aplikacija za društvenu mrežu izgrađenu koristeći React.js. 
+Omogućuje korisnicima da se prijave, pregledaju objave drugih korisnika, stvaraju vlastite objave i komentare, 
+kao i interakciju s drugim korisnicima. Tehnologije
+
+Ovaj projekt koristi sljedeće tehnologije i biblioteke:
+
+React.js: Biblioteka za izgradnju korisničkog interfejsa.
+Redux Toolkit: Biblioteka za upravljanje globalnim stanjem aplikacije.
+Axios: Biblioteka za slanje HTTP zahteva s klijenta.
+Sass: CSS preprocesor za stilizaciju komponenti.
+Tailwind CSS: CSS okvir za brzo stiliziranje i izgradnju responsivnih app.
+Formik: Biblioteka za upravljanje formama i validaciju.
+Yup: Biblioteka za definisanje i proveru sheme podataka.
+React Icons: Biblioteka ikona za korištenje unutar React komponenti.
+
+
+
+Backend
+
 ---
 
 ### Models
