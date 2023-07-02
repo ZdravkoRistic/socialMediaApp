@@ -17,6 +17,9 @@ import Posts from './pages/Posts/Posts';
 import AuthGuarding from './utils/AuthGuarding';
 import Error from './pages/Error/Error';
 import DetailPost from './pages/DetailPost/DetailPost';
+import Ads from './pages/Ads/Ads';
+import PaymentInit from './pages/PaymentInit/PaymentInit';
+import FinishPayment from './pages/FinishPayment/FinishPayment';
 
 const router = createBrowserRouter([
 	{
@@ -51,6 +54,18 @@ const router = createBrowserRouter([
 			{
 				path: '/detailPost/:id',
 				element: <DetailPost />,
+			},
+			{
+				path: '/ads',
+				element: <Ads />,
+			},
+			{
+				path: '/payment',
+				element: <PaymentInit />,
+			},
+			{
+				path: '/finishpayment',
+				element: <FinishPayment />,
 			},
 		],
 	},

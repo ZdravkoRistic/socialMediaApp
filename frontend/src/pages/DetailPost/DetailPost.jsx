@@ -10,11 +10,17 @@ function DetailPost() {
 	const [postDetail, setPostDetail] = useState({});
 	const [addComment, setAddComment] = useState('');
 
+	const [updateComm, setUpdateComm] = useState({
+		isEdit: false,
+		updateId: '',
+		onUpdateComm: false,
+	});
+
+	let user = JSON.parse(localStorage.getItem('sm_user'));
+
 	// flags
 	const [commentNew, setCommentNew] = useState(false);
 	const [removeOldComm, setRemoveOldComm] = useState(false);
-
-	console.log(postDetail);
 
 	const { id } = useParams();
 
@@ -22,7 +28,7 @@ function DetailPost() {
 		PostsService.getSinglePost(id)
 			.then((res) => setPostDetail(res.data))
 			.catch((err) => console.log(err));
-	}, [commentNew, removeOldComm]);
+	}, [commentNew, removeOldComm, updateComm.onUpdateComm]);
 
 	const handleInputComment = (e) => {
 		setAddComment(e.target.value);
@@ -50,6 +56,34 @@ function DetailPost() {
 			.then((res) => {
 				setRemoveOldComm((prev) => !prev);
 				toast.success('Removing comment is successful');
+			})
+			.catch((err) => console.log(err));
+	};
+
+	// update comment
+
+	const handleUpdateComment = (bodyInfo) => {
+		setUpdateComm({
+			...updateComm,
+			isEdit: true,
+			updateId: bodyInfo.commId,
+		});
+		setAddComment(bodyInfo.bodyDesc);
+	};
+
+	const submitUpdate = () => {
+		CommentService.updateComment(
+			{ body: addComment, user },
+			updateComm.updateId
+		)
+			.then((res) => {
+				setUpdateComm({
+					...updateComm,
+					isEdit: false,
+					onUpdateComm: (prev) => !prev,
+				});
+				setAddComment('');
+				toast.success(res.data.message);
 			})
 			.catch((err) => console.log(err));
 	};
@@ -86,17 +120,27 @@ function DetailPost() {
 						onChange={handleInputComment}
 					/>
 
-					<button
-						className='mt-5 bg-primary text-white px-[16px] py-[8px] rounded-lg cursor-pointer'
-						onClick={handleSubmitComment}>
-						Add Comment
-					</button>
+					{updateComm.isEdit ? (
+						<button
+							className='mt-5 bg-primary text-white px-[16px] py-[8px] rounded-lg cursor-pointer'
+							onClick={submitUpdate}>
+							Update Comment
+						</button>
+					) : (
+						<button
+							className='mt-5 bg-primary text-white px-[16px] py-[8px] rounded-lg cursor-pointer'
+							onClick={handleSubmitComment}>
+							Add Comment
+						</button>
+					)}
 
 					{/* comment */}
 					<div className='mt-[20px] flex flex-col gap-2'>
 						{postDetail.comments?.map((comm) => {
 							return (
-								<div className='border border-gray-600 bg-[#bcbcbc] p-[10px] rounded-lg'>
+								<div
+									key={comm._id}
+									className='border border-gray-600 bg-[#bcbcbc] p-[10px] rounded-lg'>
 									<h3>{comm.user.firstName}</h3>
 									<p>
 										Posted:{' '}
@@ -115,7 +159,14 @@ function DetailPost() {
 											onClick={() => handleRemoveComment(comm._id)}>
 											Delete
 										</button>
-										<button className='mt-5 bg-orange-400 text-white px-[16px] py-[8px] rounded-lg cursor-pointer'>
+										<button
+											className='mt-5 bg-orange-400 text-white px-[16px] py-[8px] rounded-lg cursor-pointer'
+											onClick={() =>
+												handleUpdateComment({
+													commId: comm._id,
+													bodyDesc: comm.body,
+												})
+											}>
 											Edit
 										</button>
 									</div>
