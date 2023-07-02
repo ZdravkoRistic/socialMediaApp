@@ -10,11 +10,11 @@ module.exports = {
     CORS_OPTIONS: {
         origin: (origin, cb) => {
             if (whiteList.includes(origin)) {
-                cb(null, true)
+                // cb(null, true)
             } else {
-                cb(new Error("Not allowed by CORS"))
+                // cb(new Error("Not allowed by CORS"))
             }
-            // cb(null, true)
+            cb(null, true)
         }
     }
 }
