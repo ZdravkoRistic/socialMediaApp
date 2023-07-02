@@ -1,5 +1,7 @@
 require("dotenv").config()
-const whiteList = ["http://localhost:63342", "http://localhost:5501"]
+const whiteList = ["http://localhost:63342", "http://localhost:5501" ,"https://social-media-app-frontend-gold.vercel.app/"]
+
+
 module.exports = {
     JWT_KEY: process.env.JWT_KEY,
     DB_URL: process.env.DB_URL,
@@ -8,11 +10,11 @@ module.exports = {
     CORS_OPTIONS: {
         origin: (origin, cb) => {
             if (whiteList.includes(origin)) {
-                // cb(null, true)
+                cb(null, true)
             } else {
-                // cb(new Error("Not allowed by CORS"))
+                cb(new Error("Not allowed by CORS"))
             }
-            cb(null, true)
+            // cb(null, true)
         }
     }
 }
